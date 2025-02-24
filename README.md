@@ -14,3 +14,4 @@ Currently solving problems on:
 -Stacks & Queues
 -Recursion
 -Linked Lists
+and -Patterns
