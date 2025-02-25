@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+//Reverse Digits
 public class ReverseDigits {
     public static int reverse(int n){
         int rev=0;
