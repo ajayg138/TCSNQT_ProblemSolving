@@ -23,5 +23,6 @@ public class StarHash {
 
         int ans = requireCnt(str);
         System.out.print(ans);
+        sc.close();
     }
 }
