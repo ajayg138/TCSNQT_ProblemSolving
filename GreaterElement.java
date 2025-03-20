@@ -1,20 +1,35 @@
 import java.util.Scanner;
 
 public class GreaterElement {
+//    public static int countGreaterElement(int[] arr){
+//        int n=arr.length;
+//        int cnt = 1;
+//
+//        for(int i=1;i<n;i++){
+//            boolean isGreater=true;
+//            for(int j=0;j<i;j++){
+//                if(arr[j]>arr[i]){
+//                    isGreater=false;
+//                    break;
+//                }
+//            }
+//            if(isGreater){
+//                cnt++;
+//            }
+//        }
+//        return cnt;
+//    }
+
+
     public static int countGreaterElement(int[] arr){
         int n=arr.length;
-        int cnt = 1;
+        int cnt=1;
+        int maxSoFar=arr[0];
 
         for(int i=1;i<n;i++){
-            boolean isGreater=true;
-            for(int j=0;j<i;j++){
-                if(arr[j]>arr[i]){
-                    isGreater=false;
-                    break;
-                }
-            }
-            if(isGreater){
+            if(arr[i] > maxSoFar){
                 cnt++;
+                maxSoFar=arr[i];
             }
         }
         return cnt;
