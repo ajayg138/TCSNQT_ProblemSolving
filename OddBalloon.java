@@ -1,24 +1,39 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class OddBalloon {
+//Brute force Approach
+//    public static String findAllBalloons(char[] balloons){
+//        int n = balloons.length;
+//        boolean allEven = true;
+//
+//        for(int i=0;i<n;i++){
+//            int count=0;
+//            for(int j=0;j<n;j++){
+//                if(balloons[i]==balloons[j]){
+//                    count++;
+//                }
+//            }
+//            if (count%2 != 0){
+//                return "First odd balloon color" + balloons[i];
+//            }
+//        }
+//        return "All are Even...";
+//
 
     public static String findAllBalloons(char[] balloons){
-        int n = balloons.length;
-        boolean allEven = true;
+        HashMap<Character, Integer> frequencyMap=new HashMap<>();
 
-        for(int i=0;i<n;i++){
-            int count=0;
-            for(int j=0;j<n;j++){
-                if(balloons[i]==balloons[j]){
-                    count++;
-                }
-            }
-            if (count%2 != 0){
-                return "First odd balloon color" + balloons[i];
+        for(char balloon : balloons){
+            frequencyMap.put(balloon,frequencyMap.getOrDefault(balloon,0)+1);
+        }
+
+        for(char balloon:balloons){
+            if(frequencyMap.get(balloon)%2 != 0){
+                return "First odd balloon color "+balloon;
             }
         }
-        return "All are Even...";
-
+        return "All are Even";
     }
 
     public static void main(String[] args) {
